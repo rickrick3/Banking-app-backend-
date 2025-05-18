@@ -7,9 +7,11 @@ class UserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'password', 'first_name', 'last_name', 
-                  'phone_number', 'address', 'date_of_birth', 'is_verified']
-        read_only_fields = ['id', 'is_verified']
+        fields = [
+            'id', 'username', 'email', 'phone', 'region', 'password',
+            'is_verified', 'otp_code', 'national_id', 'national_receipt'
+        ]
+        read_only_fields = ['id','is_verified', 'otp_code', 'password']
     
     def validate_password(self, value):
         # Basic password validation
