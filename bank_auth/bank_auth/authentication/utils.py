@@ -60,5 +60,5 @@ def validate_id_document(front_image, back_image, id_number):
     # In a real system, more sophisticated validation would be needed
     if id_number in front_text or id_number in back_text:
         return True, "ID successfully validated"
-    
+
     return False, "Could not verify ID number on provided documents"
